@@ -1,4 +1,4 @@
 # Exercicios-TM3
-Exercícios feitos em aula para fixação dos conteúdos de Git - Github
+Todos os Projetos e Exercícios feitos durante as aulas da Generation - Mobile
 
 
