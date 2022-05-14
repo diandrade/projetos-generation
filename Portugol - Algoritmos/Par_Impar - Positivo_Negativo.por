@@ -18,7 +18,7 @@ número é par ou ímpar, e se é positivo ou negativo.*/
 		}senao {
 			escreva ("O número é impar\n")
 		}
-		se (result < 0){
+		se (num < 0){
 			escreva ("O número é negativo\n")
 		}senao {
 			escreva ("O número é positivo\n")
@@ -30,7 +30,7 @@ número é par ou ímpar, e se é positivo ou negativo.*/
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 497; 
+ * @POSICAO-CURSOR = 383; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

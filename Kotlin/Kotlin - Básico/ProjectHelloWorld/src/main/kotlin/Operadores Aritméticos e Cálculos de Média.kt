@@ -50,7 +50,7 @@ fun main () {
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
-fun main () {
+fun main() {
     println("Insira o valor da 1º nota: ")
     val num1: Double = readLine()!!.toDouble()
     println("Insira o valor da 2º nota: ")
@@ -64,22 +64,22 @@ fun main () {
     df.roundingMode = RoundingMode.DOWN
     val roundoff = df.format(media)
 
- //Saída de Dados
+    //Saída de Dados
     /*if(media >= 6) {
         println("A média final das notas é $roundoff e você está APROVADO <:^" )
     }else{
         println("A média final das notas é $roundoff e você está REPROVADO >:^" )
     }*/
 
-    if(media <= 4){
+    if (media <= 4) {
         println("A média está péssima")
-    }else if(media <= 6){
+    } else if (media <= 6) {
         println("A média está regular")
-    }else if(media <= 8){
+    } else if (media <= 8) {
         println("A média está boa!")
-    }else if(media <= 9){
+    } else if (media <= 9) {
         println("A média está ótima!!")
-    }else{
+    } else {
         println("A média está excelente!!!")
     }
 
