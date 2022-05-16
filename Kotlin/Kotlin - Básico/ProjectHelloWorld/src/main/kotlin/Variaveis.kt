@@ -82,7 +82,7 @@ fun main(args: Array<String>){
 
     //Exemplo Calculando
 
-    print ("Digite o nome do funcionário: ")
+    /*print ("Digite o nome do funcionário: ")
     var nome = readln()
 
     println("Digite o salário dele: ")
@@ -92,8 +92,15 @@ fun main(args: Array<String>){
     var bonus = sal * 0.2
 
     println("O salário do funcionario, com 20% de bonus é: R$ ${sal + bonus}")
+    */
 
+        /*
+        var - valores que podem mudar e são mutaveis
+        val - valores contantes e imutaveis
+         */
 
+    //Formatar número format(valor)
+    //Padrão para formatar "%.2f.format(valor)"
 
 
 
