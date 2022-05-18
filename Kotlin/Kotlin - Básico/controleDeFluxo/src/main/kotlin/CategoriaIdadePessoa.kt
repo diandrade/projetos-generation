@@ -7,16 +7,12 @@ categoria ela se encontra:
 fun main() {
 
     println("Insira a idade da pessoa: ")
-    val idade = readln().toInt()
 
-    if (idade in 10..14) {
-        println("Infantil")
-    } else if (idade in 15..17) {
-        println("Juvenil")
-    } else if (idade in 18..25) {
-        println("Adulto")
-    } else {
-        println("Idade inválida")
+    when (readln().toInt()) {
+        in 10..14 -> println("Infantil")
+        in 15..17 -> println("Juvenil")
+        in 18..25 -> println("Adulto")
+        else -> println("Valor Inválido")
     }
-
 }
+

@@ -17,8 +17,10 @@ fun main() {
     } else if (a > c && c > b) {
         println("$b > $c > $a")
     } else if (b > a && a > c) {
-        println("$b > $a > $c")
+        println("$c > $a > $b")
     } else {
         println("$c > $b > $a")
     }
+
+
 }
