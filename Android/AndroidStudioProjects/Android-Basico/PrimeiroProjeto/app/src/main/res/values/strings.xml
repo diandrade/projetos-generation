@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Primeiro Projeto</string>
+    <string name="d20">D20</string>
+    <string name="d12">D12</string>
 </resources>
