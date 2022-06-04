@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private fun rolarDados20(lados:Int){
         val rolagem = (1..lados).random()
 
-        val numberD20 = findViewById<TextView>(R.id.number)
+        val numberD20 = findViewById<TextView>(R.id.valor_central)
 
         numberD20.text = rolagem.toString()
 
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     private fun rolarDados12(lados:Int){
         val rolagem = (1..lados).random()
 
-        val numberD12 = findViewById<TextView>(R.id.number)
+        val numberD12 = findViewById<TextView>(R.id.valor_central)
 
         numberD12.text = rolagem.toString()
 
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
     private fun rolarDados6(lados:Int){
         val rolagem = (1..lados).random()
 
-        val numberD6 = findViewById<TextView>(R.id.number)
+        val numberD6 = findViewById<TextView>(R.id.valor_central)
 
         numberD6.text = rolagem.toString()
 
