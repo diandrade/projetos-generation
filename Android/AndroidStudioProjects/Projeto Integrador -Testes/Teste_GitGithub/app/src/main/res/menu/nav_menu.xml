@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/ic_calendar"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="Calendar"/>
+
+    <item
+        android:id="@+id/ic_add"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="Add"/>
+
+    <item
+        android:id="@+id/ic_messege"
+        android:icon="@drawable/ic_baseline_message_24"
+        android:title="Messege"/>
+
+    <item
+        android:id="@+id/ic_Person"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Person"/>
+
+</menu>
