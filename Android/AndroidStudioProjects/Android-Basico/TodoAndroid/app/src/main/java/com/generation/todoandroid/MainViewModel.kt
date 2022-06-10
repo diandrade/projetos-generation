@@ -7,18 +7,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.todoandroid.api.Repository
 import com.generation.todoandroid.model.Categoria
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
+
+@HiltViewModel
+class MainViewModel @Inject constructor (
+    private val repository: Repository
+        ) : ViewModel() {
 
 
-class MainViewModel : ViewModel() {
-
-    val repository = Repository()
 
     private val _myCategoriaResponse = MutableLiveData<Response<List<Categoria>>>()
 
     val myCategoriaResponse: LiveData<Response<List<Categoria>>> =
         _myCategoriaResponse
+
+    init {
+        listCategoria()
+    }
 
     fun listCategoria(){
         viewModelScope.launch {
