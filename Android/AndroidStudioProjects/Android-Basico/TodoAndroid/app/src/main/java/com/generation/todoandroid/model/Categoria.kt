@@ -8,6 +8,10 @@ data class Categoria (
 
         ){
 
+    override fun toString(): String {
+        return descricao!!
+    }
+
 }
 
 
