@@ -1,4 +1,4 @@
-package com.generation.todoandroid
+package com.generation.sqlitecomroom
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,17 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.generation.todoandroid.adapter.TarefaAdapter
-import com.generation.todoandroid.databinding.FragmentListBinding
-import com.generation.todoandroid.model.Tarefa
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.generation.sqlitecomroom.adapter.UserAdapter
+import com.generation.sqlitecomroom.databinding.FragmentListBinding
+
 
 class ListFragment : Fragment() {
 
-    private  lateinit var binding: FragmentListBinding
-    private val mainViewModel: MainViewModel by activityViewModels()
+    private lateinit var binding: FragmentListBinding
+    private lateinit var mainViewModel: MainViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,25 +26,24 @@ class ListFragment : Fragment() {
 
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
-        mainViewModel.listTarefa()
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        val adapter = TarefaAdapter()
+        val adapter = UserAdapter()
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
 
-        binding.floatingAdd.setOnClickListener{
-            findNavController().navigate(R.id.action_listFragment_to_formFragment)
+        mainViewModel.selectUsers.observe(viewLifecycleOwner){
+                response -> adapter.setList(response)
         }
 
-        mainViewModel.myTarefaResponse.observe(viewLifecycleOwner){
-            response -> if (response.body() != null){
-                adapter.setList(response.body()!!)
-            }
+        binding.floatingAdd.setOnClickListener{
+            findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
 
         return binding.root
+
     }
 }
 
