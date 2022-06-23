@@ -22,6 +22,7 @@ class MainViewModel @Inject constructor (
         ) : ViewModel() {
 
 
+    var tarefaSelecionada: Tarefa? = null
 
     private val _myCategoriaResponse = MutableLiveData<Response<List<Categoria>>>()
 
@@ -75,4 +76,17 @@ class MainViewModel @Inject constructor (
             }
         }
     }
+
+    fun updateTarefa(tarefa: Tarefa){
+        viewModelScope.launch {
+            try {
+                repository.updateTarefa(tarefa)
+                listTarefa()
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+
+            }
+        }
+    }
+
 }

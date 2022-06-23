@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.generation.todoandroid.ListFragment"
+        android:name="com.generation.sqlitecomroom.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
