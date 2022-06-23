@@ -17,9 +17,12 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.generation.sqlitecomroom.AddFragment"
-        android:label="fragment_add">
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
-            app:destination="@id/listFragment" />
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

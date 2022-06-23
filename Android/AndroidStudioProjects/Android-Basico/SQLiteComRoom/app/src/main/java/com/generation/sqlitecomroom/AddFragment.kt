@@ -17,23 +17,21 @@ class AddFragment : Fragment() {
     private lateinit var mainViewModel: MainViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentAddBinding.inflate(layoutInflater,
+            container, false)
 
-        binding = FragmentAddBinding.inflate(layoutInflater, container, false)
+        mainViewModel = ViewModelProvider(this)
+            .get(MainViewModel::class.java)
 
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        binding.buttonAdd.setOnClickListener {
-
+        binding.buttonAdd.setOnClickListener{
             inserirNoBanco()
-
         }
 
         return binding.root
-
     }
 
     fun verificarCampos(nome: String, sobrenome: String, idade: String): Boolean{
@@ -41,19 +39,20 @@ class AddFragment : Fragment() {
     }
 
     fun inserirNoBanco(){
-        val nome = binding.editNome.text.toString()
-        val sobrenome = binding.editSobrenome.text.toString()
-        val idade = binding.editIdade.text.toString()
+        val nome = binding.userNome.text.toString()
+        val sobrenome = binding.userSobrenome.text.toString()
+        val idade = binding.userIdade.text.toString()
 
         if(verificarCampos(nome, sobrenome, idade)){
             val user = Usuario(0, nome, sobrenome, idade.toInt())
             mainViewModel.addUser(user)
-            Toast.makeText(context,"Usuário Adicionado!" , Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Usuario adicionado!",
+                Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }else{
-            Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Preencha todos os campos.",
+                Toast.LENGTH_LONG).show()
         }
-
     }
 
 }
